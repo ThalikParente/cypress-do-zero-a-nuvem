@@ -181,6 +181,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('be.visible')
   })
 
+<<<<<<< HEAD
   it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
     cy.get('.success')
       .should('not.be.visible')
@@ -226,4 +227,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#subtitle')
       .invoke('text', 'Eu ❤️ Gatos!')
   })
+=======
+    
+>>>>>>> fcf8a2d80d14e88955ba6dedec450d3bb26c5e00
 })
