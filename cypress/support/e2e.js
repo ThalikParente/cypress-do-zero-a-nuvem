@@ -15,6 +15,16 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import "cypress-slow-down/commands"
+
+// Força um pequeno atraso entre cada comando Cypress
+Cypress.on('command:start', (command) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 600) // 600ms de atraso entre cada comando
+  })
+})
+
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

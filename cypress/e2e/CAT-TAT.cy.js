@@ -1,5 +1,6 @@
-describe('Central de Atendimento ao Cliente TAT', () => {
+describe('Central de Atendimento ao Cliente TAT', () => { 
   beforeEach(() => {
+    Cypress.Keyboard.defaults({keystrokeDelay:50})
     cy.visit('./src/index.html')
   })
 
@@ -7,10 +8,8 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
   })
 
-
   it('preenche os campos obrigatórios e envia o formulário', () => {
     cy.clock()
-
     const longText = Cypress._.repeat('abcdefghijklmnopqrstuvwxyz', 10)
     cy.get('#firstName').type('Thálik')
     cy.get('#lastName').type('Parente')
@@ -18,9 +17,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#open-text-area').type(longText, { delay: 0 })
     cy.contains('button', 'Enviar').click()
     cy.get('.success').should('be.visible')
-
     cy.tick(3000)
-
     cy.get('.success').should('not.be.visible')
   })
 
@@ -32,9 +29,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#open-text-area').type('Teste')
     cy.contains('button', 'Enviar').click()
     cy.get('.error').should('be.visible')
-
     cy.tick(3000)
-
     cy.get('.error').should('not.be.visible')
   })
 
@@ -53,9 +48,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#phone-checkbox').check()
     cy.contains('button', 'Enviar').click()
     cy.get('.error').should('be.visible')
-
     cy.tick(3000)
-
     cy.get('.error').should('not.be.visible')
   })
 
@@ -84,7 +77,6 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.clock()
     cy.get('button[type="submit"]').click()
     cy.get('.error').should('be.visible')
-
     cy.tick(3000)
     cy.get('.error').should('not.be.visible')
   })
@@ -93,9 +85,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.clock()
     cy.fillMandatoryFieldsAndSubmit()
     cy.get('.success').should('be.visible')
-
     cy.tick(3000)
-
     cy.get('.success').should('not.be.visible')
   })
 
@@ -176,12 +166,10 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.contains('a', 'Política de Privacidade')
       .invoke('removeAttr', 'target')
       .click()
-
     cy.contains('h1', 'CAC TAT - Política de Privacidade')
       .should('be.visible')
   })
 
-<<<<<<< HEAD
   it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => {
     cy.get('.success')
       .should('not.be.visible')
@@ -199,7 +187,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('not.be.visible')
   })
 
-  it('Preenche o campo da área de txto usando o conando invoke', () => {
+  it('Preenche o campo da área de texto usando o comando invoke', () => {
     cy.get('#open-text-area')
       .invoke('val', 'Um texto qualquer')
       .should('have.value', 'Um texto qualquer')
@@ -218,7 +206,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('include', 'CAC TAT')
   })
 
-  it.only('Encontre o gato escondido', () => {
+  it('Encontre o gato escondido', () => {
     cy.get('#cat')
       .invoke('show')
       .should('be.visible')
@@ -227,7 +215,4 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     cy.get('#subtitle')
       .invoke('text', 'Eu ❤️ Gatos!')
   })
-=======
-    
->>>>>>> fcf8a2d80d14e88955ba6dedec450d3bb26c5e00
 })
