@@ -1,37 +1,73 @@
-# 🌳Cypress, from Zero to the Cloud
+# Cypress - Do Zero à Nuvem 🌩️
 
-Sample project for the "Cypress, from Zero to the Cloud" course of the Talking About Testing online school. 
+Este repositório contém os exercícios e projetos desenvolvidos durante o curso **[Cypress: Do Zero à Nuvem](https://www.udemy.com/course/testes-automatizados-com-cypress-basico/?couponCode=MT250923G3**) da Udemy, ministrado por [Walmyr Filho](https://github.com/wlsf82).
 
-## Pre-requirements
+## 📚 Sobre o curso
 
-It is required to have git, Node.js and npm installed to clone and run this project.
+O curso ensina testes automatizados utilizando Cypress, cobrindo desde os conceitos básicos até práticas mais avançadas com CI, integração com relatórios, e testes em múltiplos navegadores.
 
-> I've used versions `2.42.1`, `v20.13.1`and `10.8.1`of git, Node.js and npm, respectively. I suggest you use same or later LTS versions.
+## 🚀 O que tem aqui
 
-## Installation
+Este repositório inclui:
 
-Run `npm install`(or `bpm i`for the short version) to install the dev dependencies.
+- Exercícios práticos de cada módulo do curso
+- Scripts de teste com Cypress
+- Configuração de ambiente
+- Integrações com CI/CD (GitHub Actions)
+- Relatórios com Mochawesome
+- Testes em múltiplos navegadores
 
-## Tests
+ ## 📦 Pré-requisitos
+- Node.js v20.13.1 ou acima
+- Cypress 13.12.0
+![Cypress](https://img.shields.io/badge/tested%20with-Cypress-00b6f1.svg)
 
-In this project, you can run the testes on a desktop or mobile viewport.
+  
+## 👩‍💻 Minha experiência
 
-### Desktop 
+Este repositório é um reflexo da minha jornada de aprendizado com Cypress. Fiz este fork para acompanhar meu progresso e registrar os exercícios que desenvolvi.
 
-Run `npm test`(or `npm t`for the short version) to run the test in headless mode on a desktop viewport.
+## 🔧 Como executar os testes
 
-Or, run `npm run cy:open`to open the Cypress App on a desktop viewport.
+1. Instale as dependências do projeto (incluindo o Cypress):
+```bash
+npm install
+```
+2. Execute os testes no modo interativo (GUI):
+```bash
+npm run cy:open
+```
+3. Execute os testes no modo headless (linha de comando):
+```bash
+npm test
+```
+4. Teste com viewport mobile:
+```bash
+npm run cy:open:mobile
+# ou
+npm run test:mobile
+```
+5. Para rodar testes na nuvem (Cypress Cloud):
+```bash
+npm run test:cloud
+```
+---
 
-### Mobile
+## 📂 Organização dos testes
 
-Run `npm run test.mobile`to run the test in headless mode on a mobile viewport.
+Os testes estão organizados na pasta `cypress/e2e/`, de acordo com os módulos e exercícios propostos no curso.
 
-Or, run `npm run cy:open:mobile`to open de Cypress App on a mobile viewport.
+---
 
-## Support this project
+## 🤝 Créditos
 
-If you want to support this project, leave a ⭐
+Este repositório é um fork do projeto original do curso e todos os créditos do conteúdo pertencem a [Walmyr Filho](https://github.com/wlsf82) e à [Escola Talking About Testing](https://talkingabouttesting.com/).
 
-___
+Curso disponível na Udemy:  
+[Cypress: Do Zero à Nuvem](https://www.udemy.com/course/testes-automatizados-com-cypress-basico/?couponCode=MT250923G3)
 
-This project was created with ❤️.
+---
+
+## 📄 Licença
+
+Este projeto é apenas para fins educacionais e segue a licença original MIT.
